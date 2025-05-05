@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Dogs Page</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+    <script src="DogsPage.js" defer></script>
+    <script src="AllPages.js" defer></script>
+    <link rel="stylesheet" href="AllPages.css" />
+  </head>
+
+  <body>
+    <div class="header-footer">
+      <header id="header">
+        <h1>Dogs</h1>
+      </header>
+    </div>
+
+    <nav id="main-nav">
+      <ul>
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="StocksPage.html">Stocks</a></li>
+        <li><a href="DogsPage.html">Dogs</a></li>
+      </ul>
+    </nav>
+
+    <div class="carousel" data-simple-slider>
+      <img id="dogImage" />
+    </div>
+
+    <div class="dogsMain">
+      <!-- Dog Buttons -->
+      <div class="dogButtons">
+      </div>
+
+      <div class="dogInfoMain">
+        <div class="dogInfo">
+          <!-- <h2 id="dogBreed" class="dogInfo"></h2>
+          <p id="dogDescription" class="dogInfo"></p>
+          <p id="dogMin" class="dogInfo"></p>
+          <p id="dogMax" class="dogInfo"></p> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="annyang">
+      <h2 id="audioTitle">
+        In this web page there are options to navigate using audio!
+      </h2>
+      <h4>Ensure your mic is enabled to use this feature!</h4>
+      <div class="annyangInstructions">
+        <ul>
+          <li>Look up a dog breed</li>
+          <ul>
+            <li>Say: Look up {breed}</li>
+          </ul>
+          <li>Navigate to a different page</li>
+          <ul>
+            <li>Say: Navigate to {page}</li>
+          </ul>
+          <li>Change the page color</li>
+          <ul>
+            <li>Say: Change the color to {color}</li>
+          </ul>
+          <li>Say hello back to you!</li>
+          <ul>
+            <li>Say: Hello</li>
+          </ul>
+        </ul>
+      </div>
+      <button class="button-50" id="turnListeningOn" onclick="annyang.start();">
+        Turn Listening ON
+      </button>
+      <button
+        class="button-50"
+        id="turnListeningOff"
+        onclick="annyang.abort();"
+      >
+        Turn Listening OFF
+      </button>
+    </div>
+
+    </div>
+  </body>
+</html>

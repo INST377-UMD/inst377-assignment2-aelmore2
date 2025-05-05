@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Stocks</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+    <script src="StocksPage.js" defer></script>
+    <script src="AllPages.js" defer></script>
+    <link rel="stylesheet" href="AllPages.css" />
+  </head>
+
+  <body>
+    <div class="header-footer">
+      <header id="header">
+        <h1>Stocks</h1>
+      </header>
+    </div>
+
+    <nav id="main-nav">
+      <ul>
+        <li><a href="HomePage.html">Home</a></li>
+        <li><a href="StocksPage.html">Stocks</a></li>
+        <li><a href="DogsPage.html">Dogs</a></li>
+      </ul>
+    </nav>
+
+    <h2>Let's chart some stocks!</h2>
+    <div class="stocksLineChart">
+      <input type="text" id="stocksTicker" maxlength="5" required />
+      <br />
+      <form onsubmit="populateChart(); return false">
+        <select name="days" id="days">
+          <option value="30">30 Days</option>
+          <option value="60">60 Days</option>
+          <option value="90">90 Days</option>
+        </select>
+        <br />
+        <button type="submit" id="submitButton">Submit</button>
+      </form>
+    </div>
+
+    <div id="chartDiv">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="reddit">
+      <table id="redditTable">
+        <tr>
+          <th>Ticker</th>
+          <th>Comment Count</th>
+          <th>Sentiment</th>
+        </tr>
+      </table>
+    </div>
+
+    <div class="annyang">
+      <h2 id="audioTitle">
+        In this web page there are options to navigate using audio!
+      </h2>
+      <h4>Ensure your mic is enabled to use this feature!</h4>
+      <div class="annyangInstructions">
+        <ul>
+          <li>Look up a stock</li>
+          <ul>
+            <li>Say: Look up {ticker}</li>
+          </ul>
+          <li>Navigate to a different page</li>
+          <ul>
+            <li>Say: Navigate to {page}</li>
+          </ul>
+          <li>Change the page color</li>
+          <ul>
+            <li>Say: Change the color to {color}</li>
+          </ul>
+          <li>Say hello back to you!</li>
+          <ul>
+            <li>Say: Hello</li>
+          </ul>
+        </ul>
+      </div>
+
+      <button class="button-50" id="turnListeningOn" onclick="annyang.start();">
+        Turn Listening ON
+      </button>
+      <button
+        class="button-50"
+        id="turnListeningOff"
+        onclick="annyang.abort();"
+      >
+        Turn Listening OFF
+      </button>
+    </div>
+  </body>
+</html>
